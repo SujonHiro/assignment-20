@@ -21,7 +21,7 @@ const userSchema = new Schema({
     },
     address: String,
     phoneNumber: String
-});
+},{"timeStamp":true, "versionKey":false});
 
 const User = mongoose.model('users', userSchema);
 

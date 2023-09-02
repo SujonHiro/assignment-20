@@ -22,7 +22,7 @@ const productSchema = new Schema({
         required: true
     },
     imageURL: String
-});
+},{"timeStamp":true, "versionKey":false});
 
 const Product = mongoose.model('products', productSchema);
 

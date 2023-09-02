@@ -23,6 +23,18 @@ const userSchema = new Schema({
     phoneNumber: String
 },{"timeStamp":true, "versionKey":false});
 
+userSchema.virtual('cartItems', {
+    ref: 'CartItem',
+    localField: '_id',
+    foreignField: 'user'
+});
+
+userSchema.virtual('orders', {
+    ref: 'Order',
+    localField: '_id',
+    foreignField: 'user'
+});
+
 const User = mongoose.model('users', userSchema);
 
 module.exports = User;
